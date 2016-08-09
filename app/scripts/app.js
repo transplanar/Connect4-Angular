@@ -17,7 +17,12 @@
   angular
 //    .module('connect4', ['ui.router', 'underscore'])
 //    .module('connect4', ['ui.router', 'ui.bootstrap', 'angular.filter'])
+//    .module('connect4', ['ui.router', 'ui.bootstrap'])
+//    .module('connect4', ['ui.router', 'ui.bootstrap', 'underscore'])
     .module('connect4', ['ui.router', 'ui.bootstrap'])
-    .config(config) ;
-//    .constant('_', window._);
+    .config(config) 
+//    .factory('_', [$window, function($window){
+//      return $window._;
+//    }])
+    .constant('_', window._);
 })();

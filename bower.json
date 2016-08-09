@@ -1,0 +1,28 @@
+{
+  "name": "Connect4Angular",
+  "description": "Connect 4 in Angular",
+  "main": "app.js",
+  "authors": [
+    "Glen Cooney"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "game",
+    "angular"
+  ],
+  "homepage": "https://github.com/Bloc/bloc-frontend-project-starter",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-underscore-module": "^1.0.3",
+    "ng-ckeditor": "^0.2.1",
+    "underscore": "^1.8.3",
+    "ng-underscore": "^0.1.0"
+  }
+}
