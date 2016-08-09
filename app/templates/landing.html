@@ -1,0 +1,17 @@
+<h1>Home Page</h1>
+
+
+<!--<div class='grid-space'></div>-->
+
+<div class='container'>
+<!--  <div ng-repeat='col in gridArr | groupBy: gridX' class='row'>-->
+  <div ng-repeat='col in gridArr' class='row'>
+    <span ng-repeat='space in col' class='column'>
+<!--      <div class='grid-space' ng-click='gridClick(space)'></div>-->
+<!--      <div ng-class='gridClass' ng-click='gridClick(space)'></div>-->
+      <div ng-class="getSpaceClass(space)" ng-click='gridClick(space)'></div>
+    </span>
+  </div>
+</div>
+
+<div class='btn btn-primary'>Test</div>
