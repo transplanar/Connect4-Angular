@@ -14,7 +14,7 @@
       for(var i = 0; i < gridX; i++){
         colArr = [];
         for(var j = 0; j < gridY; j++){
-          var space = {y: i, x: j, owner: null};
+          var space = {x: j, y: i, owner: null};
           colArr.push(space);
           $scope.flatGrid.push(space);
         }
@@ -110,32 +110,71 @@
 //      console.log(arr);
       
       var i = 0;
-      var count = 1;
-      var highestCount = 1;
+//      var count = 1;
+//      var highestCount = 1;
       var inc = gridX + 2;
       
       console.log('****************************');
 //      for
       
-//      while(i < gridX || count < 3){
-      while((i+inc < arr.length)){
-        if(arr[i+inc]){
-//          console.log(arr[i],'vs',arr[i+inc]);
-          if(arr[i].owner == arr[i+inc].owner && arr[i].owner != null){
-            count++;
-            
-            if(count > highestCount){
-              highestCount = count;
-            }
-            
-            console.log('hit!', arr[i],'and',arr[i+inc],'count',highestCount);
+//      while((i+inc < arr.length)){
+//        if(arr[i+inc]){
+//          if(arr[i].owner == arr[i+inc].owner && arr[i].owner != null){
+//            count++;
+//            
+//            if(count > highestCount){
+//              highestCount = count;
+//            }
+//            
+//            console.log('hit!', arr[i],'and',arr[i+inc],'count',highestCount);
+//          }
+//        }
+//        
+//        i++;
+//      }
+      
+      
+      
+      var count = 0;
+      
+//      var loops =  0;
+      
+      var stepThroughGrid = function(arr, index){
+//        loops++;
+//        console.log('params',index);
+//        console.log(arr.length);
+        
+        console.log('index',index);
+        console.log(arr[index],'vs',arr[index+inc]);
+        
+        if(count == 4){
+          console.log('yay!')
+          return true;
+        }
+        
+        if(arr[index].owner == arr[index+inc].owner && arr[i].owner != null){
+          console.log('this');
+          count++;
+          
+          if(index+inc < arr.length){
+            console.log('counting');
+            stepThroughGrid(arr, index+inc);
+            console.log('escaped');
           }else{
-            count=1;
+            console.log('blah')
+            return;
           }
         }
         
+        console.log('no results');
+        return false;
+      }
+      
+      var result =  false;
+      
+      while(i < arr.length){
+        result = stepThroughGrid(arr, i);
         i++;
-//        highestCount = 0;
       }
       
 //      
@@ -156,11 +195,13 @@
 //        i++;
 //      }
 //      
-      if(highestCount > 3){
-        return true;
-      }else{
-        return false;
-      }
+//      if(highestCount > 3){
+//        return true;
+//      }else{
+//        return false;
+//      }
+      
+      return result;
     }
     
     

@@ -9,7 +9,8 @@
     <span ng-repeat='space in col' class='column'>
 <!--      <div class='grid-space' ng-click='gridClick(space)'></div>-->
 <!--      <div ng-class='gridClass' ng-click='gridClick(space)'></div>-->
-      <div ng-class="getSpaceClass(space)" ng-click='gridClick(space)'></div>
+<!--      <div ng-class="getSpaceClass(space)" ng-click='gridClick(space)'></div>-->
+      <div ng-class="getSpaceClass(space)" ng-click='gridClick(space)'>{{space.x}},{{space.y}}</div>
     </span>
   </div>
 </div>
